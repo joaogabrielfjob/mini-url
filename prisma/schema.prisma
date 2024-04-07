@@ -6,3 +6,11 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+model URL {
+  id         Int    @id @default(autoincrement())
+  url        String
+  identifier String @unique
+
+  @@map("url")
+}
