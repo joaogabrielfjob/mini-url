@@ -19,6 +19,7 @@
     "typescript": "^5.4.4"
   },
   "dependencies": {
-    "@prisma/client": "^5.12.1"
+    "@prisma/client": "^5.12.1",
+    "nanoid": "^5.0.7"
   }
 }
