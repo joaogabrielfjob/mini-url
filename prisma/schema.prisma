@@ -9,8 +9,9 @@ datasource db {
 
 model Url {
   id         Int    @id @default(autoincrement())
-  url        String
+  url        String @unique
   identifier String @unique
 
+  @@index(fields: [identifier])
   @@map("url")
 }

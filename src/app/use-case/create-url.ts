@@ -9,9 +9,13 @@ export class CreateURL {
   constructor(readonly repo: URLRepository) { }
 
   async do(request: CreateURLRequest): Promise<CreateURLResponse> {
+    const existingURL = await this.repo.byURL(request.url)
+
+    if (existingURL) return { ...existingURL }
+
     const identifier = nanoid()
     
-    const url = new URL({ url: request.url, identifier }).create()
+    const url = new URL({ url: request.url, identifier })
 
     const response = await this.repo.create(url)
 

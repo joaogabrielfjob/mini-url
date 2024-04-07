@@ -12,7 +12,7 @@ export class URLRepositoryPrisma implements URLRepository {
         data: { id, url, identifier }
       })
 
-      return new URL({ ...result }).create()
+      return new URL({ ...result })
     } catch(exception) {
       console.error(exception)
 
@@ -26,9 +26,23 @@ export class URLRepositoryPrisma implements URLRepository {
         where: { identifier }
       })
 
-      if (result) return new URL({ ...result }).create()
+      if (result) return new URL({ ...result })
 
-      throw new Error('URL not found!')
+      throw new Error('URL_NOT_FOUND')
+    } catch(exception) {
+      console.error(exception)
+
+      throw exception
+    }
+  }
+
+  async byURL(url: string): Promise<URL | void> {
+    try {
+      const result = await this.prisma.url.findUnique({
+        where: { url }
+      })
+
+      if (result) return new URL({ ...result })
     } catch(exception) {
       console.error(exception)
 
