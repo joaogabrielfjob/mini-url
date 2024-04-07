@@ -2,7 +2,7 @@
   "name": "mini-url",
   "version": "1.0.0",
   "description": "An URL shortener",
-  "main": "server.js",
+  "main": "server.cjs",
   "type": "module",
   "scripts": {
     "build": "tsup src",
@@ -13,8 +13,12 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.12.5",
+    "prisma": "^5.12.1",
     "tsup": "^8.0.2",
     "tsx": "^4.7.2",
     "typescript": "^5.4.4"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.12.1"
   }
 }
