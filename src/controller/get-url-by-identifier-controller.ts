@@ -1,0 +1,23 @@
+import { FastifyReply, FastifyRequest } from 'fastify'
+import { URLRepositoryPrisma } from '../infra/url/repository/url-repository-prisma.js'
+import { prisma } from '../utils/prisma.js'
+import { z } from 'zod'
+import { GetURLByIdentifier } from '../app/url/use-case/get-url-by-identifier.js'
+
+export class GetURLByIdentifierController {
+
+  schema = z.object({
+    identifier: z.string()
+  })
+
+  handle = async (request: FastifyRequest, reply: FastifyReply) => {
+    const repo = new URLRepositoryPrisma(prisma)
+    const getURLByIdentifier = new GetURLByIdentifier(repo)
+
+    const { identifier } = this.schema.parse(request.params)
+
+    const result = await getURLByIdentifier.do({ identifier })
+
+    reply.redirect(301, result.url)
+  }
+}

@@ -20,6 +20,8 @@
   },
   "dependencies": {
     "@prisma/client": "^5.12.1",
-    "nanoid": "^5.0.7"
+    "fastify": "^4.26.2",
+    "nanoid": "^5.0.7",
+    "zod": "^3.22.4"
   }
 }

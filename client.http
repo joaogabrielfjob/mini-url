@@ -1,0 +1,12 @@
+POST http://localhost:7777/
+Content-Type: application/json
+
+{
+  "url": "https://github.com/joaogabrielfjob/mini-url"
+}
+
+###
+
+GET http://localhost:7777/b436a
+
+###
