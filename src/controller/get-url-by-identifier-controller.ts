@@ -10,7 +10,7 @@ export class GetURLByIdentifierController {
     identifier: z.string()
   })
 
-  async handle(request: FastifyRequest, reply: FastifyReply) {
+  handle = async (request: FastifyRequest, reply: FastifyReply) => {
     const repo = new URLRepositoryPrisma(prisma)
     const getURLByIdentifier = new GetURLByIdentifier(repo)
 
