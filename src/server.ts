@@ -1,5 +1,5 @@
 import { fastify } from 'fastify'
-import { urlRoutes } from './infra/url/http/url-routes.js'
+import { urlRoutes } from './infra/http/url-routes.js'
 
 const server = fastify()
 

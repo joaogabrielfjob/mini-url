@@ -1,8 +1,8 @@
-import { URLRepository } from '../../../domain/url/repository/url-repository.js'
+import { URLRepository } from '../../domain/repository/url-repository.js'
 import { CreateURLRequest } from '../types/create-url-request.js'
 import { CreateURLResponse } from '../types/create-url-response.js'
-import { URL } from '../../../domain/url/entity/url.js'
-import { nanoid } from '../../../utils/nanoid.js'
+import { URL } from '../../domain/entity/url.js'
+import { nanoid } from '../../utils/nanoid.js'
 
 export class CreateURL {
 

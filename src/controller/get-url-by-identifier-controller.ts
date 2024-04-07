@@ -1,8 +1,8 @@
 import { FastifyReply, FastifyRequest } from 'fastify'
-import { URLRepositoryPrisma } from '../infra/url/repository/url-repository-prisma.js'
+import { URLRepositoryPrisma } from '../infra/repository/url-repository-prisma.js'
 import { prisma } from '../utils/prisma.js'
 import { z } from 'zod'
-import { GetURLByIdentifier } from '../app/url/use-case/get-url-by-identifier.js'
+import { GetURLByIdentifier } from '../app/use-case/get-url-by-identifier.js'
 
 export class GetURLByIdentifierController {
 
@@ -10,7 +10,7 @@ export class GetURLByIdentifierController {
     identifier: z.string()
   })
 
-  handle = async (request: FastifyRequest, reply: FastifyReply) => {
+  async handle(request: FastifyRequest, reply: FastifyReply) {
     const repo = new URLRepositoryPrisma(prisma)
     const getURLByIdentifier = new GetURLByIdentifier(repo)
 

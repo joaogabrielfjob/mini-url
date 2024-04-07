@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client'
-import { URL } from '../../../domain/entity/url.js'
-import { URLRepository } from '../../../domain/repository/url-repository.js'
+import { URLRepository } from '../../domain/repository/url-repository.js'
+import { URL } from '../../domain/entity/url.js'
 
 export class URLRepositoryPrisma implements URLRepository {
 

@@ -1,6 +1,6 @@
 import { FastifyReply, FastifyRequest } from 'fastify'
-import { URLRepositoryPrisma } from '../infra/url/repository/url-repository-prisma.js'
-import { CreateURL } from '../app/url/use-case/create-url.js'
+import { URLRepositoryPrisma } from '../infra/repository/url-repository-prisma.js'
+import { CreateURL } from '../app/use-case/create-url.js'
 import { prisma } from '../utils/prisma.js'
 import { z } from 'zod'
 
@@ -10,7 +10,7 @@ export class CreateURLController {
     url: z.string()
   })
 
-  handle = async (request: FastifyRequest, reply: FastifyReply) => {
+  async handle(request: FastifyRequest, reply: FastifyReply) {
     const repo = new URLRepositoryPrisma(prisma)
     const createURL = new CreateURL(repo)
 

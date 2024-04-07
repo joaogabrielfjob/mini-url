@@ -1,4 +1,4 @@
-import { URLRepository } from '../../../domain/url/repository/url-repository.js'
+import { URLRepository } from '../../domain/repository/url-repository.js'
 import { GetURLByIdentifierResponse } from '../types/get-url-by-identifier-reponse.js'
 import { GetURLByIdentifierRequest } from '../types/get-url-by-identifier-request.js'
 
