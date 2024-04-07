@@ -1,5 +1,5 @@
 import { FastifyReply, FastifyRequest } from 'fastify'
-import { URLRepositoryPrisma } from '../infra/repository/url-repository-prisma.js'
+import { URLRepositoryPrisma } from '../infra/repository/url-repository.prisma.js'
 import { prisma } from '../utils/prisma.js'
 import { z } from 'zod'
 import { GetURLByIdentifier } from '../app/use-case/get-url-by-identifier.js'
