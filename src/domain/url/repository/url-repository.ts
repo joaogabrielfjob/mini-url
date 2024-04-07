@@ -2,7 +2,7 @@ import { URL } from './../entity/url.js'
 
 export interface URLRepository {
 
-  create(url: URL): URL
+  create(url: URL): Promise<URL>
 
-  byIdentifier(identifier: string): URL
+  byIdentifier(identifier: string): Promise<URL>
 }
