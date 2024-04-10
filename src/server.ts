@@ -7,8 +7,13 @@ const server = fastify()
 server.register(cors, { origin: true })
 server.register(urlRoutes)
 
+const port =  Number(process.env.PORT ?? 7777)
+
 server
-  .listen({ port: 7777 })
+  .listen({
+    host: '0.0.0.0',
+    port
+  })
   .then(() => {
-    console.log('🚀 HTTP server running on http://localhost:7777')
+    console.log('🚀 HTTP server running')
   })
