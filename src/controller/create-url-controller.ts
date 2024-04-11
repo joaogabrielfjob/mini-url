@@ -18,7 +18,7 @@ export class CreateURLController {
 
     const result = await createURL.do({ url })
 
-    const baseURL = `${request.protocol}://${request.hostname}`
+    const baseURL = 'https://mini.joaojob.dev'
     const miniURL = new URL(`/${result.identifier}`, baseURL)
 
     reply.code(201).send({ mini_url: miniURL })
