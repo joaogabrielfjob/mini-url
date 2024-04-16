@@ -16,6 +16,10 @@ export class CreateURLController {
 
     const { url } = this.schema.parse(request.body)
 
+    if (url.includes('miniurl.joaojob.dev')) {
+      reply.code(201).send({ mini_url: url })
+    }
+
     const result = await createURL.do({ url })
 
     const baseURL = 'https://miniurl.joaojob.dev'
